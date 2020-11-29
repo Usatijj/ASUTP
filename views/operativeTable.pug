@@ -1,0 +1,30 @@
+
+script var operativeTableHeaders=["T1", "T2", "T3", "T4", "1-state", "2-state", "3-state", "4-state", "DoorState", "BogieState"];  
+  include refreshOperativeTable.js
+
+//- вставка джойстика mixin joystick(partName)
+include joystick.pug 
+    
+mixin T_row(name, state)
+  //- рисует строку таблицы данных
+  tr
+    td
+      div(align='center' class="value caption" )
+        =name 
+    td
+      div(id=state align='center' class="stop")
+        div(id=name  class="value") ???
+      
+
+div.operativeTable.flex-container-vertical.border
+  //- таблица отображения цифровых данных
+  table.table
+        - for (var i = 0; i<4; i++)
+            +T_row(T_list[i], +(i+1)+"-state")
+        
+        tr
+          td(colspan="2")
+            +joystick("Door", "Дверь", ["Открыть", "Стоп", "Закрыть"])
+        tr
+          td(colspan="2")
+            +joystick("Bogie", "Тележка", ["Из печи", "Стоп", "В печь"])

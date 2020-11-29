@@ -1,0 +1,9 @@
+extends footer
+
+block content
+  - var T_list=T_headers.split(';');
+  div.content.flex-container-horizontal
+    include operativeTable.pug 
+    include chart.pug
+  
+  //- заголовки данных

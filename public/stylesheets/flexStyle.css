@@ -1,0 +1,29 @@
+html,
+body {
+  height:100%;
+  margin: 5;
+  background: lightgreen
+}
+
+.flex-container{
+  display:flex;
+  flex-flow:column;
+  height: 98%;
+  background-color: lightblue
+}
+
+.header{
+  flex-basis:75px;
+  flex: 0 0 auto;
+  background-color:brown;
+}
+.content {
+  flex:1 1 auto;
+  background-color: lightgrey
+}
+.footer {
+    flex-basis:75px;
+    flex: 0 0 auto;
+    background-color:red;
+  }
+}

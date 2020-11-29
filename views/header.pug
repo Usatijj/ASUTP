@@ -1,0 +1,24 @@
+extends layout
+block header
+  div.header.flex-container-horizontal     
+     img(height="80px"  src="Logotip_small.png")
+     div.notFlex            
+            h1(align='center') СДО-16.45.12/10ВЦ
+     div.clock#timeNow
+       h3 
+         - var now=new Date()
+         - var today=now.getFullYear()+"-"+("0"+(now.getMonth()+1)).slice(-2)+"-"+("0"+now.getDate()).slice(-2);
+         - var timeNow=now.getHours()+":"+now.getMinutes()+":"+now.getSeconds();
+         = timeNow
+     div.date#dateNow
+       h3 Process start: 
+        span#dateNow
+          =today
+  script(src='/javascripts/clockTick.js')
+           
+
+
+
+            
+            
+          

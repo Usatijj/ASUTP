@@ -1,0 +1,11 @@
+mixin joystick(partName,caption,buttonsName)
+  h2(align='center') 
+    =caption
+  div(id=partName+"State" align='center' class="h4 alert alert-dark") ???
+  div(align="center")
+    button(id="open"+partName type="button" class="btn btn-success btn-block btn-lg") 
+      = buttonsName[0]
+    button(id="stop"+partName type="button" class="btn btn-danger btn-block btn-lg" disabled="1") 
+      = buttonsName[1]
+    button(id="close"+partName type="button" class="btn btn-success btn-block btn-lg" )
+      = buttonsName[2]
